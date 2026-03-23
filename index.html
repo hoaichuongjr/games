@@ -80,18 +80,11 @@ h2 {
 </div>
 
 <script>
+const BASE_URL = window.location.origin + "/repo/";
+
 function openOffice(filePath) {
-    var fullUrl = window.location.origin + window.location.pathname;
-    
-    // Xóa index.html nếu có
-    fullUrl = fullUrl.replace("index.html", "");
-    
-    // Ghép đường dẫn file
-    fullUrl = fullUrl + filePath;
-
-    // Encode URL
+    var fullUrl = BASE_URL + filePath;
     var viewerUrl = "https://view.officeapps.live.com/op/view.aspx?src=" + encodeURIComponent(fullUrl);
-
     window.open(viewerUrl, "_blank");
 }
 </script>
